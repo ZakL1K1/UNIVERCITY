@@ -11,7 +11,7 @@ num_pattern  = r"<dd class=[^>]+>(?P<numbers>(?:\+|7|8)[^<]+)"
 raspi_pattern = r"<dd class=\"spec__value\">(?P<raspi>[^<]*?\d{1,2}:\d{2}[^<]*)"
 
 names = re.findall(name_pattern, html_content)
-streets = re.findall(street_pattern, html_content, re.IGNORECASE)
+streets = re.findall(street_pattern, html_content)
 numbers = re.findall(num_pattern, html_content)
 raspi = re.findall(raspi_pattern, html_content)
 
@@ -27,4 +27,5 @@ with open('Prac№7.csv', 'w', newline='') as file:
             raspi[i] if i < len(raspi) else ''
         ]
         writer.writerow(row)
+
 
